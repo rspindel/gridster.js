@@ -103,6 +103,7 @@
         this.generate_grid_and_stylesheet();
         this.get_widgets_from_DOM();
         this.set_dom_grid_height();
+        this.set_dom_grid_width();
         this.$wrapper.addClass('ready');
         this.draggable();
 
@@ -180,6 +181,7 @@
         //this.add_faux_cols(pos.size_x);
 
         this.set_dom_grid_height();
+        this.set_dom_grid_width();
 
         return $w.fadeIn();
     };
@@ -348,6 +350,7 @@
         }, this));
 
         this.set_dom_grid_height();
+        this.set_dom_grid_width();
 
         return this;
     };
@@ -380,6 +383,7 @@
         }, this));
 
         this.set_dom_grid_height();
+        this.set_dom_grid_width();
 
         return this;
     };
@@ -465,6 +469,7 @@
             }
 
             this.set_dom_grid_height();
+            this.set_dom_grid_width();
 
             if (callback) {
                 callback.call(this, el);
@@ -813,6 +818,7 @@
         this.cells_occupied_by_player = {};
 
         this.set_dom_grid_height();
+        this.set_dom_grid_width();
     };
 
 
@@ -2225,6 +2231,17 @@
         }
 
         return $widgets;
+    };
+
+
+    /** Set the current width of the parent grid
+    *
+    *   @method set_dom_grid_width
+    *   @return {Object} Returns the instance of the Gridster class.
+    */
+    fn.set_dom_grid_width = function() {
+      this.$el.css("width", (this.gridmap.length -1) * this.min_widget_width);
+      return this;
     };
 
 
