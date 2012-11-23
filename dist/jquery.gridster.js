@@ -831,6 +831,18 @@
         return this;
     };
 
+    /**
+    * Toggle dragging.
+    *
+    * @method toggle
+    * @return {Class} Returns the instance of the Gridster Class.
+    */
+
+    fn.toggle = function() {
+        (this.drag_api.disabled) ? this.drag_api.enable() : this.drag_api.disable();
+        return this;
+    };
+
 
     /**
     * Add a new widget to the grid.
