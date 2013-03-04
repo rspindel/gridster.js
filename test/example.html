@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>gridster.js Example</title>
+
+  <link rel="stylesheet" type="text/css" href="../dist/jquery.gridster.css">
+
+  <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+  <!--
+  <script src="../dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+  -->
+  <script src="../src/utils.js"></script>
+  <script src="../src/jquery.coords.js"></script>
+  <script src="../src/jquery.collision.js"></script>
+  <script src="../src/jquery.draggable.js"></script>
+  <script src="../src/jquery.gridster.js"></script>
+
+  <script type="text/javascript">
+  $(function(){
+  	$('.gridster ul').gridster({
+		widget_margins: [10, 10],
+        widget_base_dimensions: [140, 140]  		
+  	});
+  });
+  </script>
+  <style type="text/css">
+	.gridster {
+	    width: 480px;
+	    background: #f0f0f0;
+	    margin: 0 auto;
+	    opacity: .8;
+	}
+
+	.gridster .gs_w {
+	    background: #ccc;
+	    cursor: pointer;
+	}
+
+	.gridster .player {
+	    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+	}
+
+	.gridster .preview-holder {
+	    border: none!important;
+	    border-radius: 0!important;
+	    background: rgba(0,0,0,.2)!important;
+	}
+	.gridster ul, .gridster ol {
+	    list-style: none;
+	}  	
+  </style>
+</head>
+<body>
+
+  <div class="gridster">
+      <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="4" data-col="1" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="2" data-sizex="1" data-sizey="3"></li>
+        <li data-row="4" data-col="2" data-sizex="1" data-sizey="1"></li>
+
+      </ul>
+    </div>
+
+
+</body>
+</html>
