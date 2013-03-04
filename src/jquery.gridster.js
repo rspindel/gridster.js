@@ -1101,9 +1101,9 @@
                     // so we need to move widget down to a position that dont
                     // overlaps player
                     var y = (to_row + this.player_grid_data.size_y) - wgd.row;
-
-                    this.move_widget_down($w, y);
-                    this.set_placeholder(to_col, to_row);
+                    if (this.move_widget_down($w, y)) {
+                        this.set_placeholder(to_col, to_row);
+                    }
                 }
             }
         }, this));
@@ -1709,6 +1709,7 @@
     * @return {Class} Returns the instance of the Gridster Class.
     */
     fn.move_widget_down = function($widget, y_units) {
+        if (y_units <= 0) { return false; }
         var el_grid_data = $widget.coords().grid;
         var actual_row = el_grid_data.row;
         var moved = [];
@@ -1730,9 +1731,7 @@
                 var tmp_y = this.displacement_diff(
                              wd, widget_grid_data, y_diff);
 
-                if (tmp_y > 0) {
-                    this.move_widget_down($w, tmp_y);
-                }
+                this.move_widget_down($w, tmp_y);
             }, this));
 
             widget_grid_data.row = next_row;
@@ -1741,7 +1740,9 @@
             this.$changed = this.$changed.add($widget);
 
             moved.push($widget);
+            return true;
         }
+        return false;
     };
 
 
