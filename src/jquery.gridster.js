@@ -1640,6 +1640,7 @@
         this.remove_from_gridmap(widget_grid_data);
         widget_grid_data.row = row;
         this.add_to_gridmap(widget_grid_data);
+        $widget.css('top', ''); //fix conflict with jquery-resizable
         $widget.attr('data-row', row);
         this.$changed = this.$changed.add($widget);
 
@@ -1691,6 +1692,7 @@
                 this.remove_from_gridmap(widget_grid_data);
                 widget_grid_data.row = next_row;
                 this.add_to_gridmap(widget_grid_data);
+                $widget.css('top', ''); //fix conflict with jquery-resizable
                 $widget.attr('data-row', widget_grid_data.row);
                 this.$changed = this.$changed.add($widget);
 
@@ -1742,6 +1744,7 @@
 
             widget_grid_data.row = next_row;
             this.update_widget_position(widget_grid_data, $widget);
+            $widget.css('top', ''); //fix conflict with jquery-resizable
             $widget.attr('data-row', widget_grid_data.row);
             this.$changed = this.$changed.add($widget);
 
