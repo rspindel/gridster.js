@@ -3,7 +3,12 @@
 * Copyright (c) 2012 ducksboard; Licensed MIT */
 
 .gridster {
-    position:relative;
+    position: relative;
+}
+
+.gridster > ul {
+    list-style: none;
+    padding: 0;
 }
 
 .gridster > * {
